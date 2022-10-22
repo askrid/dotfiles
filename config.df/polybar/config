@@ -26,8 +26,12 @@ alert = #F38BA8
 disabled = #45475A
 
 [bar/main]
-width = 100%
+width = 99.3%
 height = 24pt
+offset-x = 0.35%
+offset-y = 0.7%
+
+radius = 6
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -44,7 +48,7 @@ separator-foreground = ${colors.primary}
 
 font-0 = Hack Nerd Font;3
 
-modules-left = xworkspaces ciderbar
+modules-left = xworkspaces
 modules-center = date
 modules-right = network cpu memory filesystem
 
@@ -92,12 +96,10 @@ mount-0 = /
 format-mounted-prefix = "DISK "
 format-mounted-prefix-foreground = ${colors.primary}
 format-mounted-foreground = ${colors.foreground}
-format-mounted-padding = 1
 
 format-unmounted-prefix = "DISK "
 format-unmounted-prefix-foreground = ${colors.primary}
 format-unmounted-foreground = ${colors.disabled}
-format-unmounted-padding = 1
 
 label-mounted = %{F#FAB387}%mountpoint%%{F-} %used%
 
@@ -113,7 +115,6 @@ warn-percentage = 90
 format-prefix = "MEM "
 format-prefix-foreground = ${colors.primary}
 format-foreground = ${colors.foreground}
-format-padding = 1
 format-warn-prefix-foreground = ${colors.alert}
 
 label = %used:9%
@@ -128,7 +129,6 @@ warn-perecentage = 90
 format-prefix = "CPU "
 format-prefix-foreground = ${colors.primary}
 format-foreground = ${colors.foreground}
-format-padding = 1
 format-warn-prefix-foreground = ${colors.alert}
 
 label = %percentage:2%%
@@ -144,15 +144,12 @@ format-packetloss = <label-packetloss> <label-connected>
 
 label-connected = %{F#FAB387}UP%{F-} %upspeed:7%  %{F#FAB387}DOWN%{F-} %downspeed:7%
 label-connected-foreground = ${colors.foreground}
-label-connected-padding = 1
 
 label-disconnected = %ifname% offline
 label-disconnected-foreground = ${colors.disabled}
-label-disconnected-padding = 1
 
 label-packetloss = 
 label-packetloss-foreground = ${colors.disabled}
-label-packetloss-padding-left = 1
 
 [module/date]
 type = internal/date
@@ -167,17 +164,6 @@ time-alt = %T
 
 label = %{F#90B4FA}%date%%{F-}%time%
 label-foreground = ${colors.foreground}
-label-padding = 2
-
-[module/ciderbar]
-type = custom/script
-
-exec = cider-polybar -a get-currentmediaitem
-
-interval = 1
-
-format-padding = 2
-
 
 [settings]
 screenchange-reload = true
