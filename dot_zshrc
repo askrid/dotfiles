@@ -1,0 +1,49 @@
+# Neofetch
+if (( $(tput cols) >= 72 )); then
+  neofetch | cat -s
+fi
+
+
+# Powerlevel10k instant prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Zsh
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd extendedglob
+unsetopt beep
+bindkey -v
+
+# Compinstall
+zstyle :compinstall filename '/home/askrid/.zshrc'
+autoload -Uz compinit
+compinit
+
+# Oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+zstyle ':omz:update' mode reminder
+zstyle ':omz:update' frequency 3
+ENABLE_CORRECTION="true"
+plugins=(git sudo zsh-autosuggestions zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
+
+# Compilation flags
+export ARCHFLAGS="-arch x86_64"
+
+# Nvm
+source /usr/share/nvm/init-nvm.sh
+
+# Aliases
+alias sudo="sudo "
+alias python="python3"
+alias pip="pip3"
+alias vi="nvim"
+alias vim="nvim"
+alias rm="rm -i"
+
+# Powerlevel10k
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
