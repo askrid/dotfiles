@@ -27,7 +27,6 @@ disabled = #45475A
 
 [bar/main]
 height = 24pt
-radius = 2
 
 background = ${colors.background}
 foreground = ${colors.foreground}
