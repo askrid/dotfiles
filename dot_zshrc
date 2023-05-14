@@ -1,5 +1,6 @@
 # Neofetch
-(( $(tput cols) < 72 )) || neofetch | cat -s
+alias neofetch="neofetch | cat -s"
+(( $(tput cols) < 72 )) || neofetch
 
 # Powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -34,13 +35,20 @@ export ARCHFLAGS="-arch x86_64"
 # Nvm
 source /usr/share/nvm/init-nvm.sh
 
-# Aliases
+# Run aliases with Sudo command.
 alias sudo="sudo "
+
+# Python
 alias python="python3"
 alias pip="pip3"
+
+# Nvim
 alias vi="nvim"
 alias vim="nvim"
+
+# Ask before removing.
 alias rm="rm -i"
 
 # Powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
