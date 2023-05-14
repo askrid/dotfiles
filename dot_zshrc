@@ -1,8 +1,5 @@
 # Neofetch
-if (( $(tput cols) >= 72 )); then
-  neofetch | cat -s
-fi
-
+(( $(tput cols) < 72 )) || neofetch | cat -s
 
 # Powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
