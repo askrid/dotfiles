@@ -1,6 +1,8 @@
 # Neofetch
 alias neofetch="neofetch | cat -s"
-(( $(tput cols) < 72 )) || neofetch
+if [[ "$TERM" == "xterm-kitty" ]] && (( $(tput cols) >= 72 )); then
+	neofetch
+fi
 
 # Powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
