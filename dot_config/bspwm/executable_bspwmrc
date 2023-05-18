@@ -1,11 +1,11 @@
-#! /bin/sh
+#!/bin/sh
 
 $HOME/.fehbg &
 $HOME/.config/polybar/launch.sh &
 picom &
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d term code web music etc
+bspc monitor -d sh ed www mp etc
 
 bspc config focus_follows_pointer	true
 bspc config ignore_ewmh_focus		true
