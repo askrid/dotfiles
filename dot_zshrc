@@ -34,9 +34,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-# Nvm
-source /usr/share/nvm/init-nvm.sh
-
 # Run aliases with Sudo command.
 alias sudo="sudo "
 

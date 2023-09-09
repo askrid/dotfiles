@@ -1,0 +1,90 @@
+@theme "colors"
+
+* {
+    font: "Hack Nerd Font 13";
+}
+
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+window {
+    width: 450px;
+    height: 500px;
+    border: 1px;
+    border-color: @border-color;
+    background-color: @normal-background;
+}
+
+mainbox {
+    background-color: @normal-background;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @normal-background;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @alternate-active-background;
+    padding: 6px;
+    text-color: @alternate-active-foreground;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @normal-foreground;
+    background-color: inherit; 
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 1;
+    lines: 10;
+    background-color: @normal-background;
+}
+
+element {
+    padding: 5px;
+    background-color: @normal-background;
+    text-color: @normal-foreground;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color:  @selected-normal-background;
+    text-color: @selected-normal-foreground;
+}
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @normal-background;
+    text-color: @normal-foreground;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @selected-normal-background;
+  text-color: @selected-normal-foreground;
+}
+
