@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale '/home/askrid/.local/share/fehbg/wallhaven-gpzve7_3440x1440.png' 
+feh --no-fehbg --bg-scale '$HOME/.local/share/fehbg/sebastian-unrau-sp-p7uuT0tw-unsplash.jpg'
