@@ -10,7 +10,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Zsh
-HISTFILE=~/.histfile
+HISTFILE="$HOME/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd extendedglob
@@ -18,7 +18,7 @@ unsetopt beep
 bindkey -v
 
 # Compinstall
-zstyle :compinstall filename '/home/askrid/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 
@@ -40,7 +40,7 @@ source /usr/share/nvm/init-nvm.sh
 # Run aliases with Sudo command.
 alias sudo="sudo "
 
-# Python
+# Python3
 alias python="python3"
 alias pip="pip3"
 
@@ -48,9 +48,9 @@ alias pip="pip3"
 alias vi="nvim"
 alias vim="nvim"
 
-# Ask before removing.
+# Safe rm
 alias rm="rm -i"
 
 # Powerlevel10k
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f "$HOME/.p10k.zsh" ]] || source "$HOME/.p10k.zsh"
 
