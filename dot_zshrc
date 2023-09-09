@@ -51,3 +51,5 @@ alias rm="rm -i"
 # Powerlevel10k
 [[ ! -f "$HOME/.p10k.zsh" ]] || source "$HOME/.p10k.zsh"
 
+# bun completions
+[ -s "/home/askrid/.bun/_bun" ] && source "/home/askrid/.bun/_bun"
