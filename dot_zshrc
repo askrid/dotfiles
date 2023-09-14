@@ -28,6 +28,12 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
+# Powerlevel10k
+[[ ! -f "$HOME/.p10k.zsh" ]] || source "$HOME/.p10k.zsh"
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
 # Run aliases with Sudo command.
 alias sudo="sudo "
 
@@ -39,14 +45,8 @@ alias pip="pip3"
 alias vi="nvim"
 alias vim="nvim"
 
-# Safe rm
+# Simple safe rm
 alias rm="rm -i"
 
 # Neofetch
 alias neofetch="neofetch | cat -s"
-
-# Powerlevel10k
-[[ ! -f "$HOME/.p10k.zsh" ]] || source "$HOME/.p10k.zsh"
-
-# bun completions
-[ -s "/home/askrid/.bun/_bun" ] && source "/home/askrid/.bun/_bun"

@@ -24,8 +24,6 @@ bspc config presel_feedback_color "#111111"
 
 bspc rule -a kitty state=pseudo_tiled
 bspc rule -a Code desktop='^2' follow=on
-bspc rule -a jetbrains-goland desktop='^2' follow=on
-bspc rule -a jetbrains-webstorm desktop='^2' follow=on
 bspc rule -a firefox desktop='^3' follow=on
 bspc rule -a Cider desktop='^4'
 bspc rule -a Slack desktop='^5'
