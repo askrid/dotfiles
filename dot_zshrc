@@ -47,3 +47,7 @@ alias rm="rm -i"
 
 # neofetch
 alias neofetch="neofetch | cat -s"
+
+# pbcopy replica from macos
+alias pbcopy="xsel --clipboard --input"
+
