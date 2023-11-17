@@ -4,13 +4,29 @@ This is my dotfiles repositroy managed with [chezmoi](https://github.com/twpayne
 
 ## Dependencies
 
-### Fonts
+| type          | name          | description               |
+|---------------|---------------|---------------------------|
+| Fonts         | hack nerd font| editor font               |
+|               | roboto        | GUI font                  |
+| Software      | neovim        | terminal editor           |
+|               | lazy          | neovim plugin manager     |
+|               | vscode        | daily code editor         |
+|               | bspwm         | window manager            |
+|               | picom         | compositor                |
+|               | sxhkd         | hotkey demon for X        |
+|               | oh-my-zsh     | zsh boost                 |
+|               | powerlevel10k | pretty shell              |
+|               | fehbg         | image viewer, etc.        |
+|               | flavours      | color scheme manager      |
+|               | kitty         | decent terminal emulator  |
+|               | rofi          | applicaiton launcher      |
+|               | ranger        | terminal file browser     |
+|               | nemo          | GUI file browser          |
+|               | polybar       | status bar widget         |
+|               | neofetch      | show off                  | 
 
-- Sans-serif: Hack Nerd Font
-- Serif: Roboto
+## Todo
 
-## TODO
-
-- Machine by machine configurations
-- Init script
+[ ] machine specific configurations (macos)
+[ ] kindful init script
 
