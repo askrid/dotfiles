@@ -1,9 +1,9 @@
-# Powerlevel10k instant prompt
+# powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Zsh
+# zsh
 HISTFILE="$HOME/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000
@@ -11,12 +11,12 @@ setopt autocd extendedglob
 unsetopt beep
 bindkey -v
 
-# Compinstall
+# compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 
-# Oh-my-zsh
+# oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 zstyle ':omz:update' mode reminder
@@ -25,25 +25,25 @@ ENABLE_CORRECTION="true"
 plugins=(git sudo zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
-# Compilation flags
+# compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-# Powerlevel10k
+# powerlevel10k
 [[ ! -f "$HOME/.p10k.zsh" ]] || source "$HOME/.p10k.zsh"
 
-# Run aliases with Sudo command.
+# run aliases with Sudo command.
 alias sudo="sudo "
 
-# Python3
+# python3
 alias python="python3"
 alias pip="pip3"
 
-# Nvim
+# nvim
 alias vi="nvim"
 alias vim="nvim"
 
-# Simple safe rm
+# simple safe rm
 alias rm="rm -i"
 
-# Neofetch
+# neofetch
 alias neofetch="neofetch | cat -s"
