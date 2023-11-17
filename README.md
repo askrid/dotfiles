@@ -27,6 +27,6 @@ This is my dotfiles repositroy managed with [chezmoi](https://github.com/twpayne
 
 ## Todo
 
-[ ] machine specific configurations (macos)
-[ ] kindful init script
+- [ ] machine specific configurations (macos)
+- [ ] kindful init script
 
