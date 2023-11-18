@@ -22,20 +22,20 @@
 # light = true
 
 [[items]]
-file = "$XDG_CONFIG_HOME/rofi/themes/colors.rasi"
+file = "$HOME/.config/rofi/themes/colors.rasi"
 template = "rofi"
 subtemplate = "colors"
 rewrite = true
 
 [[items]]
-file = "$XDG_CONFIG_HOME/polybar/colors.ini"
+file = "$HOME/.config/polybar/colors.ini"
 template = "polybar"
 subtemplate = "default"
 rewrite = true
-hook = "$XDG_CONFIG_HOME/polybar/launch.sh"
+hook = "$HOME/.config/polybar/launch.sh"
 
 [[items]]
-file = "$XDG_CONFIG_HOME/kitty/colors.conf"
+file = "$HOME/.config/kitty/colors.conf"
 template = "kitty"
 subtemplate = "default-256"
 rewrite = true
