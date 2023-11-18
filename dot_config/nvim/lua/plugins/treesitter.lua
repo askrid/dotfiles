@@ -3,7 +3,7 @@ return {
     event = 'BufReadPre',
     config = function()
         require('nvim-treesitter.configs').setup({
-            ensuire_installed = {
+            ensure_installed = {
                 'c',
                 'cpp',
                 'go',
