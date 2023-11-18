@@ -8,12 +8,12 @@ This is my dotfiles repositroy managed with [chezmoi](https://github.com/twpayne
 |---------------|---------------|---------------------------|
 | Fonts         | hack nerd font| editor font               |
 |               | roboto        | GUI font                  |
-| Software      | neovim        | terminal editor           |
+| Software      | neovim        | editor                    |
 |               | lazy          | neovim plugin manager     |
-|               | vscode        | daily code editor         |
+|               | vscode        | pretty(ish) code editor   |
 |               | bspwm         | window manager            |
 |               | picom         | compositor                |
-|               | sxhkd         | hotkey demon for X        |
+|               | sxhkd         | hotkey daemon for X       |
 |               | oh-my-zsh     | zsh boost                 |
 |               | powerlevel10k | pretty shell              |
 |               | fehbg         | image viewer, etc.        |
