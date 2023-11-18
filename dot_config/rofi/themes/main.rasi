@@ -1,7 +1,7 @@
 @theme "colors"
 
 * {
-    font: "Hack Nerd Font 13";
+    font: "Hack Nerd Font 12";
 }
 
 element-text, element-icon, mode-switcher {
