@@ -31,7 +31,7 @@ export ARCHFLAGS="-arch x86_64"
 # powerlevel10k
 [[ ! -f "$HOME/.p10k.zsh" ]] || source "$HOME/.p10k.zsh"
 
-# run aliases with Sudo command.
+# run aliases with sudo command.
 alias sudo="sudo "
 
 # python3
@@ -50,4 +50,5 @@ alias neofetch="neofetch | cat -s"
 
 # pbcopy replica from macos
 alias pbcopy="xsel --clipboard --input"
+alias pbpaste="xsel --clipboard --output"
 

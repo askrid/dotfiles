@@ -29,7 +29,7 @@ vim.opt.showmatch = true
 vim.opt.shiftwidth = 4
 
 vim.opt.nu = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
