@@ -3,15 +3,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# load themes and plugins
+# Load themes and plugins.
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# zsh options
+# Configure zsh.
 HISTFILE="$HOME/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000
@@ -19,32 +19,29 @@ setopt autocd extendedglob
 unsetopt beep
 bindkey -e
 
-# compinstall
+# Configure compinstall.
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 
-# compilation flags
-export ARCHFLAGS="-arch x86_64"
-
-# run aliases with sudo command.
+# Run aliases with sudo command.
 alias sudo="sudo "
 
-# python3
+# Binary replacements.
+alias ls="eza"
+alias grep="rg"
+alias vi="nvim"
+alias vim="nvim"
 alias python="python3"
 alias pip="pip3"
 
-# nvim
-alias vi="nvim"
-alias vim="nvim"
-
-# simple safe rm
+# Ask before removing files.
 alias rm="rm -i"
 
-# neofetch remove margin
+# Remove margin on printing neofetch.
 alias neofetch="neofetch|cat -s"
 
-# pbcopy replica from macos
+# Clipboard utility replica from macOS.
 alias pbcopy="xsel --clipboard --input"
 alias pbpaste="xsel --clipboard --output"
 

@@ -1,3 +1,3 @@
 #!/bin/sh
-/sbin/feh --no-fehbg --bg-fill "$HOME/.local/share/fehbg/luca-bravo-ii5JY_46xH0-unsplash.jpg"
+/sbin/feh --no-fehbg --bg-fill "$HOME/.local/share/fehbg/luca-bravo-ESkw2ayO2As-unsplash.jpg"
 
