@@ -1,3 +1,4 @@
 # dotfiles
 
-My dotfiles managed with [chezmoi](https://github.com/twpayne/chezmoi). Arch, btw.
+Personal dotfiles managed with [chezmoi](https://github.com/twpayne/chezmoi). Arch, btw.
+
