@@ -1,3 +1,5 @@
+set previewer ~/.config/lf/preview.sh
+
 cmd open &{{
     case $(file --mime-type -Lb "$f") in
         text/*|application/json|application/xml|application/javascript)

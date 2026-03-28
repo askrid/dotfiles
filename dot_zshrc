@@ -38,9 +38,6 @@ alias pip="pip3"
 # Ask before removing files.
 alias rm="rm -i"
 
-# Remove margin on printing neofetch.
-alias neofetch="neofetch|cat -s"
-
 # Clipboard utility replica from macOS.
 alias pbcopy="xsel --clipboard --input"
 alias pbpaste="xsel --clipboard --output"

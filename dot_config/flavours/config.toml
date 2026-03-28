@@ -28,15 +28,14 @@ subtemplate = "colors"
 rewrite = true
 
 [[items]]
-file = "$HOME/.config/polybar/colors.ini"
-template = "polybar"
-subtemplate = "default"
+file = "$HOME/.config/waybar/colors.css"
+template = "waybar"
 rewrite = true
-hook = "$HOME/.config/polybar/launch.sh"
+hook = "pkill -SIGUSR2 waybar"
 
 [[items]]
 file = "$HOME/.config/kitty/colors.conf"
 template = "kitty"
 subtemplate = "default-256"
 rewrite = true
-hook = "pkill -USR1 kitty"
+hook = "pkill -SIGUSR1 kitty"

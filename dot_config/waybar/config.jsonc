@@ -1,0 +1,50 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 6,
+    "margin-left": 10,
+    "margin-right": 10,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": ["cpu", "memory", "disk", "custom/public-ip", "clock"],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "empty": ""
+        },
+        "persistent-workspaces": {
+            "*": 4
+        }
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "{usage}% ({avg_frequency}GHz)"
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "{used:0.1f}/{total:0.1f}GiB"
+    },
+
+    "disk": {
+        "interval": 30,
+        "path": "/",
+        "format": "{used}"
+    },
+
+    "custom/public-ip": {
+        "exec": "curl -s ifconfig.me",
+        "interval": 300,
+        "format": "{}"
+    },
+
+    "clock": {
+        "format": "{:%a %b %d %H:%M:%S}",
+        "interval": 1
+    }
+}
+
