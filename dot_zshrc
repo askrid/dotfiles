@@ -38,7 +38,3 @@ alias pip="pip3"
 # Ask before removing files.
 alias rm="rm -i"
 
-# Clipboard utility replica from macOS.
-alias pbcopy="xsel --clipboard --input"
-alias pbpaste="xsel --clipboard --output"
-
