@@ -43,8 +43,9 @@ window#waybar {
     padding: 0 10px 0 13px;
 }
 
-#mpris.paused {
-    color: @base03;
+#mpris.paused,
+#mpris.stopped {
+    color: @base04;
 }
 
 #mpris,
