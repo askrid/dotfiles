@@ -23,7 +23,7 @@ window#waybar {
     padding: 3px 3px;
     border: none;
     border-radius: 4px;
-    margin: 0 7px;
+    margin: 0 4px;
 }
 
 #workspaces button.empty {

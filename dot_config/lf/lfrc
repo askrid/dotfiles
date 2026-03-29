@@ -11,3 +11,8 @@ cmd open &{{
     esac
 }}
 
+
+cmd on-select &{{
+    exec lf -remote 'send redraw'
+}}
+
