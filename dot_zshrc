@@ -38,3 +38,6 @@ alias pip="pip3"
 # Ask before removing files.
 alias rm="rm -i"
 
+# Remove whitespace on neofetch.
+alias neofetch="neofetch|cat -s"
+

@@ -1,0 +1,122 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "modules": [
+    {
+      "type": "title",
+    },
+    {
+      "type": "custom",
+      "format": "╭──────────────────────────────────╮"
+    },
+    {
+      "type": "os",
+      "keyIcon": ""
+    },
+    {
+      "type": "kernel",
+      "keyIcon": ""
+    },
+    {
+      "type": "cpu",
+      "keyIcon": "﬙",
+      "format": "{name} @ {freq-max}"
+    },
+    {
+      "type": "memory",
+      "keyIcon": "",
+      "format": "{used} / {total}"
+    },
+    {
+      "type": "disk",
+      "keyIcon": "",
+      "format": "{size-used} / {size-total}"
+    },
+    {
+      "type": "gpu",
+      "keyIcon": "",
+      "format": "{vendor} {name}"
+    },
+    {
+      "type": "display",
+      "keyIcon": "",
+      "format": "{width}x{height} @ {refresh-rate}Hz"
+    },
+    {
+      "type": "shell",
+      "keyIcon": ""
+    },
+    {
+      "type": "terminal",
+      "keyIcon": ""
+    },
+    {
+      "type": "media",
+      "keyIcon": ""
+    },
+    {
+      "type": "uptime",
+      "keyIcon": ""
+    },
+    {
+      "type": "packages",
+      "keyIcon": "",
+    },
+    {
+      "type": "wm",
+      "keyIcon": "",
+      "detectPlugin": true
+    },
+    {
+      "type": "custom",
+      "format": "╰──────────────────────────────────╯"
+    },
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "paddingLeft": 21,
+    }
+/*
+    "de",
+    "terminalfont",
+    "host",
+    "wmtheme",
+    "theme",
+    "icons",
+    "font",
+    "cursor",
+    "localip",
+    "battery",
+    "poweradapter",
+    "locale",
+    "swap",
+*/
+  ],
+  "logo": {
+    "type": "kitty-direct",
+    "source": "$HOME/.local/share/imgs/logo-archlinux.png",
+    "width": 29,
+    "padding": {
+      "top": 1,
+      "left": 1,
+      "right": 2
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "color": {
+      "keys": "cyan",
+      "title": "italic_blue"
+    },
+    "key": {
+      "type": "icon",
+      "width": 7
+    },
+    "percent": {
+      "type": 3
+    },
+    "bar": {
+      "width": 6
+    }
+  }
+}
+

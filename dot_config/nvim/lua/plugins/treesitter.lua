@@ -8,7 +8,8 @@ return {
             'c', 'cpp', 'go', 'rust', 'python',
             'vim', 'vimdoc', 'lua', 'query',
             'sql', 'html', 'javascript', 'typescript',
-            'css', 'markdown', 'bash', 'zsh',
+            'css', 'markdown', 'bash', 'zsh', 'json',
+            'jsonc',
         })
 
         vim.api.nvim_create_autocmd('FileType', {
