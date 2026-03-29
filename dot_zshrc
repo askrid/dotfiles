@@ -27,17 +27,15 @@ compinit
 # Run aliases with sudo command.
 alias sudo="sudo "
 
-# Binary replacements.
+# Ask before removing files.
+alias rm="rm -i"
+
+# Binary aliases.
 alias ls="eza"
 alias grep="rg"
 alias vi="nvim"
 alias vim="nvim"
 alias python="python3"
 alias pip="pip3"
-
-# Ask before removing files.
-alias rm="rm -i"
-
-# Remove whitespace on neofetch.
-alias neofetch="neofetch|cat -s"
+alias fetch="fastfetch"
 
