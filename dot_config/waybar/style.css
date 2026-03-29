@@ -21,7 +21,7 @@ window#waybar {
 #workspaces button {
     color: @base04;
     background: transparent;
-    padding: 0 5px;
+    padding: 0 7px;
     border: none;
     border-radius: 4px;
     margin: 2px 1px;
@@ -32,7 +32,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @base0B;
+    color: @base0C;
 }
 
 #workspaces button:not(.active):not(.empty) {
@@ -56,9 +56,9 @@ window#waybar {
     margin-right: 2px;
 }
 
-#cpu { color: @base0E; }
-#memory { color: @base09; }
-#disk { color: @base0A; }
-#custom-public-ip { color: @base0D; }
+#cpu { color: @base0C; }
+#memory { color: @base0D; }
+#disk { color: @base04; }
+#custom-public-ip { color: @base04; }
 #clock { color: @base05; }
 

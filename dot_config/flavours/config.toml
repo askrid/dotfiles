@@ -22,6 +22,12 @@
 # light = true
 
 [[items]]
+file = "$HOME/.config/hypr/colors.conf"
+template = "hyprland"
+rewrite = true
+hook = "hyprctl reload"
+
+[[items]]
 file = "$HOME/.config/rofi/themes/colors.rasi"
 template = "rofi"
 subtemplate = "colors"

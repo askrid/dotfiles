@@ -21,17 +21,17 @@
     },
 
     "cpu": {
-        "interval": 5,
+        "interval": 2,
         "format": "{usage}% ({avg_frequency}GHz)"
     },
 
     "memory": {
-        "interval": 5,
+        "interval": 2,
         "format": "{used:0.1f}/{total:0.1f}GiB"
     },
 
     "disk": {
-        "interval": 30,
+        "interval": 10,
         "path": "/",
         "format": "{used}"
     },
