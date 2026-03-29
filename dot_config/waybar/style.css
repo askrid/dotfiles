@@ -19,12 +19,11 @@ window#waybar {
 }
 
 #workspaces button {
-    color: @base04;
     background: transparent;
-    padding: 0 7px;
+    padding: 3px 3px;
     border: none;
     border-radius: 4px;
-    margin: 2px 1px;
+    margin: 0 7px;
 }
 
 #workspaces button.empty {
@@ -39,21 +38,29 @@ window#waybar {
     color: @base05;
 }
 
-#cpu,
+#mpris {
+    color: @base0E;
+    padding: 0 10px 0 13px;
+}
+
+#mpris.paused {
+    color: @base03;
+}
+
+#mpris,
 #memory,
 #disk,
 #custom-public-ip,
 #clock {
-    color: @base05;
-    padding: 0 10px;
+    border-left: 1px solid @base03;
 }
 
 #cpu,
 #memory,
 #disk,
-#custom-public-ip {
-    border-right: 1px solid @base03;
-    margin-right: 2px;
+#custom-public-ip,
+#clock {
+    padding: 0 10px;
 }
 
 #cpu { color: @base0C; }

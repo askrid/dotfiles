@@ -6,7 +6,7 @@
     },
     {
       "type": "custom",
-      "format": "╭──────────────────────────────────╮"
+      "format": "╭────────────────────────────────╮"
     },
     {
       "type": "os",
@@ -50,10 +50,6 @@
       "keyIcon": ""
     },
     {
-      "type": "media",
-      "keyIcon": ""
-    },
-    {
       "type": "uptime",
       "keyIcon": ""
     },
@@ -68,12 +64,12 @@
     },
     {
       "type": "custom",
-      "format": "╰──────────────────────────────────╯"
+      "format": "╰────────────────────────────────╯"
     },
     {
       "type": "colors",
       "symbol": "circle",
-      "paddingLeft": 21,
+      "paddingLeft": 19,
     }
 /*
     "de",
@@ -94,7 +90,7 @@
   "logo": {
     "type": "kitty-direct",
     "source": "$HOME/.local/share/imgs/logo-archlinux.png",
-    "width": 29,
+    "width": 28,
     "padding": {
       "top": 1,
       "left": 1,
@@ -102,14 +98,14 @@
     }
   },
   "display": {
-    "separator": "  ",
+    "separator": " ",
     "color": {
       "keys": "cyan",
       "title": "italic_blue"
     },
     "key": {
       "type": "icon",
-      "width": 7
+      "width": 5
     },
     "percent": {
       "type": 3
