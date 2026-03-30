@@ -22,7 +22,6 @@ window#waybar {
     background: transparent;
     padding: 3px 3px;
     border: none;
-    border-radius: 4px;
     margin: 0 4px;
 }
 
@@ -48,11 +47,7 @@ window#waybar {
     color: @base04;
 }
 
-#mpris,
-#memory,
-#disk,
-#custom-public-ip,
-#clock {
+#mpris {
     border-left: 1px solid @base03;
 }
 
@@ -69,4 +64,11 @@ window#waybar {
 #disk { color: @base04; }
 #custom-public-ip { color: @base04; }
 #clock { color: @base05; }
+
+#cpu,
+#memory,
+#disk,
+#custom-public-ip {
+    border-right: 1px solid @base03;
+}
 
