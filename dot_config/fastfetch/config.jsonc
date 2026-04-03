@@ -33,13 +33,18 @@
     },
     {
       "type": "gpu",
-      "keyIcon": "",
+      "keyIcon": "",
       "format": "{vendor} {name}"
     },
     {
       "type": "display",
       "keyIcon": "",
       "format": "{width}x{height} @ {refresh-rate}Hz"
+    },
+    {
+      "type": "wm",
+      "keyIcon": "",
+      "detectPlugin": true
     },
     {
       "type": "shell",
@@ -56,11 +61,6 @@
     {
       "type": "packages",
       "keyIcon": "",
-    },
-    {
-      "type": "wm",
-      "keyIcon": "",
-      "detectPlugin": true
     },
     {
       "type": "custom",
@@ -101,7 +101,7 @@
     "separator": " ",
     "color": {
       "keys": "cyan",
-      "title": "italic_blue"
+      "title": "italic_magenta"
     },
     "key": {
       "type": "icon",

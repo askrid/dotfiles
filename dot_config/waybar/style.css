@@ -59,7 +59,7 @@ window#waybar {
     padding: 0 10px;
 }
 
-#cpu { color: @base0C; }
+#cpu { color: @base0B; }
 #memory { color: @base0D; }
 #disk { color: @base04; }
 #custom-public-ip { color: @base04; }

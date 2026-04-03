@@ -24,6 +24,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.isfname:append('@-@')
 vim.opt.autochdir = false
+vim.diagnostic.config({ virtual_text = true })
 vim.api.nvim_create_autocmd('VimEnter', {
     callback = function()
         local arg = vim.fn.argv(0)
