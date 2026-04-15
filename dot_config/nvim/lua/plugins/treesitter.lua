@@ -9,7 +9,7 @@ return {
             'vim', 'vimdoc', 'lua', 'query',
             'sql', 'html', 'javascript', 'typescript',
             'css', 'markdown', 'bash', 'zsh', 'json',
-            'jsonc',
+            'jsonc', 'make',
         })
 
         vim.api.nvim_create_autocmd('FileType', {

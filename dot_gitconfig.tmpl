@@ -1,7 +1,9 @@
 [user]
 	email = joonwoo3023@gmail.com
 	name = askrid
-{{- if eq .chezmoi.hostname "sigma" }}
+{{- if eq .chezmoi.hostname "lambda" }}
+    signingkey = 3B97D971AC48F88F
+{{- else if .chezmoi.hostname "sigma" }}
 	signingkey = 712F31B7EE36A4F7
 {{- end }}
 [commit]
