@@ -2,9 +2,9 @@ set previewer ~/.config/lf/preview.sh
 
 {{ if eq .chezmoi.os "linux" -}}
 OPEN="xdg-open"
-{{ else -}}
+{{- else -}}
 OPEN="open"
-{{ end -}}
+{{- end }}
 
 cmd open &{{`{{`}}
     case $(file --mime-type -Lb "$f") in
