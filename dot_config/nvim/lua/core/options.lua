@@ -1,4 +1,5 @@
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.autoread = true
 vim.opt.guicursor = ''
 vim.opt.showmode = false
 vim.opt.tabstop = 4
@@ -23,8 +24,11 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.isfname:append('@-@')
-vim.opt.autochdir = false
 vim.diagnostic.config({ virtual_text = true })
+vim.wo.signcolumn = "yes"
+
+-- Set the working directory to the first command argument.
+vim.opt.autochdir = false
 vim.api.nvim_create_autocmd('VimEnter', {
     callback = function()
         local arg = vim.fn.argv(0)

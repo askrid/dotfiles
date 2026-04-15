@@ -1,18 +1,24 @@
 set previewer ~/.config/lf/preview.sh
 
-cmd open &{{
+{{ if eq .chezmoi.os "linux" -}}
+OPEN="xdg-open"
+{{ else -}}
+OPEN="open"
+{{ end -}}
+
+cmd open &{{`{{`}}
     case $(file --mime-type -Lb "$f") in
         text/*|application/json|application/xml|application/javascript)
             lf -remote "send $id \$nvim \"$f\""
             ;;
         *)
-            xdg-open "$f" &
+            $OPEN "$f" &
             ;;
     esac
-}}
+{{`}}`}}
 
 
-cmd on-select &{{
+cmd on-select &{{`{{`}}
     exec lf -remote 'send redraw'
-}}
+{{`}}`}}
 

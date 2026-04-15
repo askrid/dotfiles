@@ -1,7 +1,11 @@
 include colors.conf
 
 font_family Hack Nerd Font Mono
+{{ if eq .chezmoi.hostname "lambda" -}}
 font_size   11
+{{ else -}}
+font_size   13
+{{ end -}}
 
 remember_window_size    no
 initial_window_width    140c
@@ -18,6 +22,8 @@ focus_follows_mouse yes
 
 cursor_shape        block
 shell_integration   no-cursor
+
+enabled_layouts tall:bias=50;full_size=1;mirrored=false
 
 map kitty_mod+enter launch --cwd=current
 map kitty_mod+t     new_tab_with_cwd

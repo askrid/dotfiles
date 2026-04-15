@@ -1,0 +1,15 @@
+[user]
+	email = joonwoo3023@gmail.com
+	name = askrid
+{{- if eq .chezmoi.hostname "sigma" }}
+	signingkey = 712F31B7EE36A4F7
+{{ end -}}
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[alias]
+	b = branch
+	co = checkout
+	s = status
+
