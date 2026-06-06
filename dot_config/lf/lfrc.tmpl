@@ -1,12 +1,7 @@
 set previewer ~/.config/lf/preview.sh
 
-{{ if eq .chezmoi.os "linux" -}}
-OPEN="xdg-open"
-{{- else -}}
-OPEN="open"
-{{- end }}
-
 cmd open &{{`{{`}}
+    OPEN="{{ if eq .chezmoi.os "linux" }}xdg-open{{ else }}open{{ end }}"
     case $(file --mime-type -Lb "$f") in
         text/*|application/json|application/xml|application/javascript)
             lf -remote "send $id \$nvim \"$f\""
