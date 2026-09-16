@@ -9,6 +9,7 @@ return {
         { '<leader>fg', '<cmd>Telescope git_files<cr>' },
         { '<leader>fa', '<cmd>Telescope live_grep<cr>' },
         { '<leader>fb', '<cmd>Telescope buffers<cr>' },
+        { '<leader>fs', '<cmd>Telescope git_status<cr>' },
         { '<leader>fh', '<cmd>Telescope help_tags<cr>' },
     },
 }

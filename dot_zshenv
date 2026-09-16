@@ -1,7 +1,6 @@
 export SHELL=/bin/zsh
 export EDITOR=nvim
 export VISUAL=nvim
-export BROWSER=helium-browser
 export TERM=xterm-kitty
 export PAGER=less
 
