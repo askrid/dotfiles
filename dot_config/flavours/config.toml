@@ -22,7 +22,7 @@
 # light = true
 
 [[items]]
-file = "$HOME/.config/hypr/colors.conf"
+file = "$HOME/.config/hypr/colors.lua"
 template = "hyprland"
 rewrite = true
 hook = "hyprctl reload"
