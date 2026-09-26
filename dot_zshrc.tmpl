@@ -17,26 +17,18 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Configure zsh.
 HISTFILE="$HOME/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd extendedglob
 unsetopt beep
-bindkey -e
-
-# Configure compinstall.
+bindkey -e # use emacs binding
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 
-# Run aliases with sudo command.
-alias sudo="sudo "
-
-# Ask before removing files.
-alias rm="rm -i"
-
-# Binary aliases.
+alias sudo="sudo " # run alias after sudo
+alias rm="rm -i" # rm safeguard
 alias ls="eza"
 alias grep="rg"
 alias vi="nvim"

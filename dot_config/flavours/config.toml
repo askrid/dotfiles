@@ -45,3 +45,9 @@ template = "kitty"
 subtemplate = "default-256"
 rewrite = true
 hook = "pkill -SIGUSR1 kitty"
+
+[[items]]
+file = "$HOME/.config/mako/colors"
+template = "mako"
+rewrite = true
+hook = "makoctl reload"
