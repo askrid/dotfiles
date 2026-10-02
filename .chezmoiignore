@@ -10,5 +10,6 @@ README.md
 .config/gtk-4.0
 .config/nwg-look
 .config/flavours
+.config/mako
 {{ end }}
 
