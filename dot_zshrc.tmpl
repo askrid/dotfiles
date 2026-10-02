@@ -36,3 +36,6 @@ alias vim="nvim"
 alias python="python3"
 alias pip="pip3"
 alias fetch="fastfetch"
+{{ if eq .chezmoi.os "darwin" -}}
+alias codex="caffeinate codex --yolo"
+{{- end }}
