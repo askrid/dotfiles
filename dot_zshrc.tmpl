@@ -1,34 +1,32 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Load themes and plugins.
 {{ if eq .chezmoi.os "linux" -}}
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 {{- else -}}
-source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{- $brew := output "brew" "--prefix" | trim }}
+source {{ $brew }}/share/powerlevel10k/powerlevel10k.zsh-theme
+source {{ $brew }}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source {{ $brew }}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 {{- end }}
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-HISTFILE="$HOME/.histfile"
+HISTFILE=~/.local/state/zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd extendedglob
 unsetopt beep
-bindkey -e # use emacs binding
-zstyle :compinstall filename "$HOME/.zshrc"
-autoload -Uz compinit
-compinit
+bindkey -e
+zstyle ':completion:*' cache-path ~/.cache/zcompcache
+autoload -Uz compinit && compinit -d ~/.cache/zcompdump
 
-alias sudo="sudo " # run alias after sudo
-alias rm="rm -i" # rm safeguard
+(( $+commands[fnm] )) && eval "$(fnm env --use-on-cd --shell zsh)"
+
+alias sudo="sudo "
+alias rm="rm -i"
 alias ls="eza"
 alias grep="rg"
 alias vi="nvim"
@@ -37,5 +35,37 @@ alias python="python3"
 alias pip="pip3"
 alias fetch="fastfetch"
 {{ if eq .chezmoi.os "darwin" -}}
-alias codex="caffeinate caveman codex --yolo"
+alias codex="caffeinate codex --yolo"
+alias claude="caffeinate claude --dangerously-skip-permissions"
+
+# brewup [patch|minor|major]: upgrade formulae changed at least that much, plus
+# revision-only rebuilds of their dependents, then casks. Skips pinned.
+brewup() {
+  local min=${1:-patch} line pkgs revs deps
+  local -A lvl need=(patch 1 minor 2 major 3)
+  for line in ${(f)"$(brew outdated --formula --json=v2 | jq -r '
+    def parts: sub("_[0-9]+$";"") | split(".") | map(split("-")[0]);
+    .formulae[] | select(.pinned | not)
+    | (.installed_versions[-1] | parts) as $a | (.current_version | parts) as $b
+    | (if $a == $b then 0 elif $a[0] != $b[0] then 3 elif $a[1] != $b[1] then 2 else 1 end) as $lvl
+    | "\(.name) \($lvl)"')"}; do
+    lvl[${line% *}]=${line#* }
+  done
+  pkgs=(${(k)lvl[(R)<${need[$min]}->]})
+  revs=(${(k)lvl[(R)0]})
+  if (( ${#pkgs} && ${#revs} )); then
+    for line in ${(f)"$(brew deps --installed --for-each "${revs[@]}")"}; do
+      deps=(${(z)line#*:})
+      deps=(${deps:*pkgs})
+      (( ${#deps} )) && pkgs+=(${line%%:*})
+    done
+  fi
+  if (( ${#pkgs} )); then
+    echo "upgrading (${min}+): ${pkgs[*]}"
+    [[ -n $BREWUP_DRY ]] || HOMEBREW_MAKE_JOBS=6 taskpolicy -b brew upgrade --formula "${pkgs[@]}"
+  else
+    echo "no formula upgrades at ${min}+ level"
+  fi
+  [[ -n $BREWUP_DRY ]] || brew upgrade --cask
+}
 {{- end }}

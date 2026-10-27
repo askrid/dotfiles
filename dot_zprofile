@@ -1,0 +1,2 @@
+# The system zprofile resets PATH; reapply ours.
+source ~/.zshenv

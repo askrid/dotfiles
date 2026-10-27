@@ -1,0 +1,21 @@
+export SHELL=/bin/zsh
+export EDITOR=nvim
+export VISUAL=nvim
+export TERM=xterm-kitty
+export PAGER=less
+export GOPATH=~/.local/share/go
+
+{{- if eq .chezmoi.os "darwin" }}
+export SHELL_SESSIONS_DISABLE=1
+{{- end }}
+
+typeset -U path
+path=(
+  ~/.local/bin
+  ~/.cargo/bin
+{{- if eq .chezmoi.os "darwin" }}
+  ~/.local/share/fnm/aliases/default/bin
+  {{ output "brew" "--prefix" "rustup" | trim }}/bin
+{{- end }}
+  $path
+)
