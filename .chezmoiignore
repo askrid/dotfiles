@@ -11,5 +11,6 @@ README.md
 .config/nwg-look
 .config/flavours
 .config/mako
+.config/procps
 {{ end }}
 
