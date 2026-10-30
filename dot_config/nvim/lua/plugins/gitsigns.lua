@@ -23,6 +23,5 @@ return {
 				gs.nav_hunk("prev")
 			end)
 		end,
-		signcolumn = true,
 	},
 }

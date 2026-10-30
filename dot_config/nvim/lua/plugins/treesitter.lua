@@ -23,7 +23,7 @@ return {
 			"bash",
 			"zsh",
 			"json",
-			"jsonc",
+			"toml",
 			"make",
 		})
 
