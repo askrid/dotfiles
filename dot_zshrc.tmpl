@@ -35,7 +35,7 @@ alias python="python3"
 alias pip="pip3"
 alias fetch="fastfetch"
 {{ if eq .chezmoi.os "darwin" -}}
-alias claude="caffeinate claude --dangerously-skip-permissions"
+alias claude="CLAUDE_CODE_GATEWAY_HINT_HEADERS=1 caffeinate wye claude -- --dangerously-skip-permissions"
 
 # brewup [patch|minor|major]: upgrade formulae changed at least that much, plus
 # revision-only rebuilds of their dependents, then casks. Skips pinned.
