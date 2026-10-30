@@ -1,3 +1,5 @@
 require("core.keymaps")
 require("core.options")
+require("core.center")
+require("core.ruler")
 require("lazyconf")
