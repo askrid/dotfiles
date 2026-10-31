@@ -1,50 +1,40 @@
-vim.opt.clipboard = "unnamedplus"
-vim.opt.guicursor = ""
-vim.opt.showmode = false
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.completeopt = { "noinsert", "menuone", "noselect" }
-vim.opt.wildmode = { "longest", "list" }
-vim.opt.mouse = "v"
-vim.opt.ignorecase = true
-vim.opt.showmatch = true
-vim.opt.nu = true
-vim.opt.relativenumber = true
-vim.opt.signcolumn = "yes"
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.wrap = false
-vim.opt.termguicolors = true
-vim.opt.scrolloff = 8
-vim.opt.isfname:append("@-@")
-vim.diagnostic.config({ virtual_text = true })
+local opt = vim.opt
+
+opt.number = true
+opt.relativenumber = true
+opt.signcolumn = "yes"
+opt.termguicolors = true
+opt.guicursor = ""
+opt.showmode = false
+opt.showmatch = true
+opt.wrap = false
+opt.scrolloff = 8
+opt.winborder = "rounded"
+opt.fillchars = { eob = " " }
+
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
+
+opt.clipboard = "unnamedplus"
+opt.mouse = "v"
+opt.ignorecase = true
+opt.completeopt = { "noinsert", "menuone", "noselect" }
+opt.wildmode = { "longest", "list" }
+opt.isfname:append("@-@")
+opt.swapfile = false
+opt.backup = false
+
+-- Tint the line number instead of drawing a sign, which would hide the gitsigns
+-- bar; show the message only on the cursor line.
+local signs = {
+	text = { "", "", "", "" }, -- by severity, error to hint
+	numhl = { "DiagnosticSignError", "DiagnosticSignWarn", "DiagnosticSignInfo", "DiagnosticSignHint" },
+}
+vim.diagnostic.config({ severity_sort = true, virtual_text = { current_line = true }, signs = signs })
 
 -- No remote plugins use these providers.
-vim.g.loaded_node_provider = 0
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_python3_provider = 0
-vim.g.loaded_ruby_provider = 0
-
--- Files over 1 MB open as plain text: no treesitter, LSP or ftplugins.
-vim.filetype.add({
-	pattern = {
-		[".*"] = {
-			function(path)
-				return vim.fn.getfsize(path) > 1024 * 1024 and "bigfile" or nil
-			end,
-			{ priority = math.huge },
-		},
-	},
-})
-
--- Set the working directory to the first command argument.
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		local arg = vim.fn.argv(0)
-		if arg ~= "" and vim.fn.isdirectory(arg) == 1 then
-			vim.cmd.cd(arg)
-		end
-	end,
-})
+for _, p in ipairs({ "node", "perl", "python3", "ruby" }) do
+	vim.g["loaded_" .. p .. "_provider"] = 0
+end

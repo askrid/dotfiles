@@ -16,10 +16,11 @@ return {
 			end
 			map("<leader>dp", gs.preview_hunk)
 			map("<leader>dP", gs.preview_hunk_inline)
-			map("]d", function()
+			-- ]h/[h, not ]d/[d, which Neovim uses for diagnostics.
+			map("]h", function()
 				gs.nav_hunk("next")
 			end)
-			map("[d", function()
+			map("[h", function()
 				gs.nav_hunk("prev")
 			end)
 		end,

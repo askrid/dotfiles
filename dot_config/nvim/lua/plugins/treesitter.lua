@@ -1,32 +1,31 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	lazy = false,
 	branch = "main",
+	lazy = false,
 	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter").install({
+			"bash",
 			"c",
 			"cpp",
+			"css",
 			"go",
-			"rust",
-			"python",
-			"vim",
-			"vimdoc",
-			"lua",
-			"query",
-			"sql",
 			"html",
 			"javascript",
-			"typescript",
-			"css",
-			"markdown",
-			"bash",
-			"zsh",
 			"json",
-			"toml",
+			"lua",
 			"make",
+			"markdown",
+			"python",
+			"query",
+			"rust",
+			"sql",
+			"toml",
+			"typescript",
+			"vim",
+			"vimdoc",
+			"zsh",
 		})
-
 		vim.api.nvim_create_autocmd("FileType", {
 			callback = function()
 				pcall(vim.treesitter.start)

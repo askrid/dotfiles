@@ -1,4 +1,6 @@
 README.md
+# ~/.config/nvim/lazy-lock.json links here, so lazy updates land in the repo.
+nvim-lazy-lock.json
 
 {{ if ne .chezmoi.os "linux" }}
 .bashrc

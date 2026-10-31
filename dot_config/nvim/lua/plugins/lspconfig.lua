@@ -1,21 +1,11 @@
 return {
 	"neovim/nvim-lspconfig",
 	config = function()
-		-- clangd logs every request to stderr, which floods lsp.log
+		-- clangd logs every request to stderr, flooding lsp.log.
 		vim.lsp.config("clangd", { cmd = { "clangd", "--log=error" } })
-		-- lspconfig blocks on a cargo sysroot probe per Rust buffer unless this
-		-- is set; "discover" is rust-analyzer's default
-		vim.lsp.config("rust_analyzer", {
-			settings = { ["rust-analyzer"] = { cargo = { sysroot = "discover" } } },
-		})
-		vim.lsp.enable({
-			"clangd",
-			"gopls",
-			"pyright",
-			"lua_ls",
-			"ts_ls",
-			"rust_analyzer",
-			"bashls",
-		})
+		-- Any sysroot ("discover" is the default) skips lspconfig's blocking cargo
+		-- probe on every Rust buffer.
+		vim.lsp.config("rust_analyzer", { settings = { ["rust-analyzer"] = { cargo = { sysroot = "discover" } } } })
+		vim.lsp.enable({ "bashls", "clangd", "gopls", "lua_ls", "pyright", "rust_analyzer", "ts_ls" })
 	end,
 }

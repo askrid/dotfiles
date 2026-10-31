@@ -1,5 +1,7 @@
-require("core.keymaps")
+require("core.keymaps") -- sets <leader>, so it goes first
 require("core.options")
-require("core.center")
-require("core.ruler")
-require("lazyconf")
+require("core.files")
+require("ui.center")
+require("ui.guides")
+require("ui.ruler")
+require("core.lazy")
