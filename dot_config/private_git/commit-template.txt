@@ -1,0 +1,13 @@
+
+
+# <type>(<scope>): <summary>   (imperative, lowercase, no period;
+#                               aim for 50 chars; line never over 72)
+#
+# type: feat fix perf refactor test docs build ci chore revert
+# scope: the area changed, from the repository's own vocabulary
+#
+# Body (wrap at 72): why it is needed and what it changes. Keep the
+# evidence: before/after numbers, the trade-off, what was rejected.
+# A refactor says "No behavior change."
+#
+# Footers: Refs: #123 / Closes: #123 / BREAKING CHANGE: ...
